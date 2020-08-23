@@ -11,9 +11,7 @@
 
 struct Cercle
 {
-    float rayon{0};
-    float circumference{0};
-    float surfaceArea{0};
+    float rayon{0}, circumference{0}, surfaceArea{0};
     const float pi{3.14};
     const uint8_t factorTwo{2};
 };
@@ -23,7 +21,7 @@ int main()
 {
     Cercle cercleExo;
     
-    std::cout << "Calculation of circumference and surface area of a circle \n";
+    std::cout << "Circumference and surface area of a circle \n";
     std::cout << "Please enter the rayon of a circle in centimeter \n";
     std::cout << "Rayon = ";
     std::cin >> cercleExo.rayon;
