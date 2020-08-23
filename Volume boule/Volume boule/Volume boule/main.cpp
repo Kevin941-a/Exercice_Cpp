@@ -19,16 +19,18 @@ int main()
     float volume{0};
     
     std::cout << "Volume of a ball \n";
-    std::cout << "Formula : (4*pi*R³)/3 \n";
+    std::cout << "Formula : (4 x pi x R³) / 3 \n";
     std::cout << "\n";
     
-    std::cout << "Enter the rayon R = ";
+    std::cout << "Enter the rayon R in centimeter \n";
+    std::cout << "R = ";
     std::cin >> rayon;
     std::cout << std::endl;
     
     volume = (factorFour * pi * pow(rayon, 3))/factorThree;
     
-    std::cout << "Volume = " << volume << std::endl;
+    std::cout << "Rayon = " << rayon << " cm" << std::endl;
+    std::cout << "Volume = " << volume << " cm³" << std::endl;
     
     return 0;
 }
