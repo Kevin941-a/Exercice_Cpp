@@ -14,15 +14,10 @@ struct Cercle
 
 };
 
-struct CercleFactorTwo
-{
-    float rayonFactorTwo{0}, circumferenceFactorTwo{0}, surfaceAreaFactorTwo{0};
-};
-
 int main()
 {
     Cercle cercleExo;
-    CercleFactorTwo cercleMultiplicateByTwo;
+    Cercle multiplicatedByTwo;
     
     const float pi{3.14};
     const uint8_t factorTwo{2};
@@ -31,14 +26,14 @@ int main()
     std::cout << "Enter the rayon of a circle in centimeter \n";
     std::cout << "Rayon = ";
     std::cin >> cercleExo.rayon;
-    cercleMultiplicateByTwo.rayonFactorTwo = cercleExo.rayon * 2;
+    multiplicatedByTwo.rayon = cercleExo.rayon * 2;
     std::cout << std::endl;
     
     cercleExo.circumference = factorTwo * pi * cercleExo.rayon;
-    cercleMultiplicateByTwo.circumferenceFactorTwo = factorTwo * pi * cercleMultiplicateByTwo.rayonFactorTwo;
+    multiplicatedByTwo.circumference = factorTwo * pi * multiplicatedByTwo.rayon;
     
     cercleExo.surfaceArea = pi * pow(cercleExo.rayon, 2);
-    cercleMultiplicateByTwo.surfaceAreaFactorTwo = pi * pow(cercleMultiplicateByTwo.rayonFactorTwo, 2);
+    multiplicatedByTwo.surfaceArea = pi * pow(multiplicatedByTwo.rayon, 2);
     
     std::cout << "First circle" << std::endl;
     std::cout << "Rayon = " << cercleExo.rayon << " cm" << std::endl;
@@ -47,9 +42,9 @@ int main()
     std::cout << std::endl;
     
     std::cout << "Second circle" << std::endl;
-    std::cout << "Rayon 2nd circle = " << cercleMultiplicateByTwo.rayonFactorTwo << " cm" << std::endl;
-    std::cout << "Circumference 2nd circle = " << cercleMultiplicateByTwo.circumferenceFactorTwo << " cm" << std::endl;
-    std::cout << "Surface Area 2nd circle = " << cercleMultiplicateByTwo.surfaceAreaFactorTwo << " cm²" << std::endl;
+    std::cout << "Rayon 2nd circle = " << multiplicatedByTwo.rayon << " cm" << std::endl;
+    std::cout << "Circumference 2nd circle = " << multiplicatedByTwo.circumference << " cm" << std::endl;
+    std::cout << "Surface Area 2nd circle = " << multiplicatedByTwo.surfaceArea << " cm²" << std::endl;
     std::cout << std::endl;
     
     return 0;
