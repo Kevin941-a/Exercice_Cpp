@@ -9,6 +9,8 @@ struct User
     std::string firstname{};
     std::string age{};
     std::string referenceNumber{};
+    const uint8_t maxSizeAge{2};
+    const uint8_t maxSizeReferenceNumber{6};
 };
 
 struct Adress
@@ -54,58 +56,60 @@ int main()
     std::cout << std::endl;
     
     std::cout << "ID to complete : " << numberOfId << std::endl;
+    std::cout << std::endl;
     
     for (int index = 1; index <= numberOfId; ++index)
         {
-            std::cout << index << " Name : ";
+            std::cout << "ID Number " << index << std::endl;
+            
+            std::cout << " Name : ";
             std::getline(std::cin, id.user.name);
             identification.push_back(id.user.name);
 
-            std::cout << index << " Firstname : ";
+            std::cout << " Firstname : ";
             std::getline(std::cin, id.user.firstname);
             identification.push_back(id.user.firstname);
 
-            std::cout << index << " Age : ";
+            std::cout << " Age : ";
             std::cin >> id.user.age;
             std::cin.ignore(2, '\n');
             
-            while(id.user.age.length() > 2)
+            while(id.user.age.length() > id.user.maxSizeAge)
                 {
-                    std::cout << index << " Error try again AGE : ";
+                    std::cout << " Error try again AGE : ";
                     std::cin >> id.user.age;
                     std::cin.ignore(2, '\n');
                 }
             identification.push_back(id.user.age);
 
-            std::cout << index << " Reference number : ";
+            std::cout << " Reference number : ";
             std::cin >> id.user.referenceNumber;
             std::cin.ignore(5, '\n');
             
-            while(id.user.referenceNumber.length() > 6)
+            while(id.user.referenceNumber.length() > id.user.maxSizeReferenceNumber)
                 {
-                    std::cout << index << " Error try again REFERENCE NUMBER : ";
+                    std::cout << " Error try again REFERENCE NUMBER : ";
                     std::cin >> id.user.referenceNumber;
                     std::cin.ignore(5, '\n');
                 }
             identification.push_back(id.user.referenceNumber);
             
-            std::cout << index << " Birthday jj/mm/yyyy : ";
+            std::cout << " Birthday jj/mm/yyyy : ";
             std::getline(std::cin, id.birthday.dateBirthday);
             
             while(id.birthday.dateBirthday[2] != '/')
-            {
-                std::cout << index << " Error try again BIRTHDAY : ";
-                std::getline(std::cin, id.birthday.dateBirthday);
-            }
+                {
+                    std::cout << " Error try again BIRTHDAY : ";
+                    std::getline(std::cin, id.birthday.dateBirthday);
+                }
             
             while(id.birthday.dateBirthday[5] != '/')
-            {
-                std::cout << index << " Error try again BIRTHDAY : ";
-                std::getline(std::cin, id.birthday.dateBirthday);
-            }
+                {
+                    std::cout << " Error try again BIRTHDAY : ";
+                    std::getline(std::cin, id.birthday.dateBirthday);
+                }
             identification.push_back(id.birthday.dateBirthday);
         }
-    
     
     for( std::string element : identification)
     {
