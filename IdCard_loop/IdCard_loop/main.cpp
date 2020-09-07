@@ -45,7 +45,7 @@ struct ID
 
 int main()
 {
-    int numberOfId{};
+    int numberOfId{}, idNumber{1};
     ID id{};
     std::vector<std::string> identification = {};
     
@@ -109,14 +109,22 @@ int main()
                     std::getline(std::cin, id.birthday.dateBirthday);
                 }
             identification.push_back(id.birthday.dateBirthday);
+            std::cout << std::endl;
         }
     
-    for( std::string element : identification)
-    {
-        std::cout << element << std::endl;
-    }
-    
-    
+    for (int y = 0; y < numberOfId * 5; ++y) // 5 correspond au nombre d'input attention à l'augmenter avec les inputs.
+        {
+            std::cout << "Checking ID number " << idNumber << std::endl;
+            std::cout << "Name : " << identification[y] << std::endl;
+            std::cout << "Firstname : " << identification[y+1] << std::endl;
+            std::cout << "Age : " << identification[y+2] << std::endl;
+            std::cout << "Reference number : " << identification[y+3] << std::endl;
+            std::cout << "Birthday : " << identification[y+4] << std::endl;
+            std::cout << std::endl;
+            y = y + 4;
+            idNumber++;
+        }
+
     std::cout << "Fin du code \n";
     return 0;
 }
