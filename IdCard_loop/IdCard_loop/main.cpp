@@ -171,19 +171,19 @@ int main()
     for (int iteration = 0; iteration < numberOfId * numberOfInput; ++iteration)
         {
             std::cout << "Checking ID number " << idNumber << std::endl;
-            std::cout << "Name : " << identification[iteration] << std::endl;
-            std::cout << "Firstname : " << identification[iteration+1] << std::endl;
-            std::cout << "Age : " << identification[iteration+2] << std::endl;
-            std::cout << "Reference number : " << identification[iteration+3] << std::endl;
-            std::cout << "Birthday : " << identification[iteration+4] << std::endl;
-            std::cout << "Eye color : " << identification[iteration+5] << std::endl;
-            std::cout << "Hair color : " << identification[iteration+6] << std::endl;
-            std::cout << "Size : " << identification[iteration+7] << std::endl;
-            std::cout << "Number of street : " << identification[iteration+8] << std::endl;
-            std::cout << "Name of street : " << identification[iteration+9] << std::endl;
-            std::cout << "ZIP code : " << identification[iteration+10] << std::endl;
-            std::cout << "City : " << identification[iteration+11] << std::endl;
-            std::cout << "Country : " << identification[iteration+12] << std::endl;
+            std::cout << "\tName : " << identification[iteration] << std::endl;
+            std::cout << "\tFirstname : " << identification[iteration+1] << std::endl;
+            std::cout << "\tAge : " << identification[iteration+2] << std::endl;
+            std::cout << "\tReference number : " << identification[iteration+3] << std::endl;
+            std::cout << "\tBirthday : " << identification[iteration+4] << std::endl;
+            std::cout << "\tEye color : " << identification[iteration+5] << std::endl;
+            std::cout << "\tHair color : " << identification[iteration+6] << std::endl;
+            std::cout << "\tSize : " << identification[iteration+7] << std::endl;
+            std::cout << "\tNumber of street : " << identification[iteration+8] << std::endl;
+            std::cout << "\tName of street : " << identification[iteration+9] << std::endl;
+            std::cout << "\tZIP code : " << identification[iteration+10] << std::endl;
+            std::cout << "\tCity : " << identification[iteration+11] << std::endl;
+            std::cout << "\tCountry : " << identification[iteration+12] << std::endl;
             std::cout << std::endl;
             iteration = iteration + changeTable;
             idNumber++;
