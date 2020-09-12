@@ -99,18 +99,20 @@ int main()
             
             std::cout << " Birthday jj/mm/yyyy : ";
             std::getline(std::cin, id.birthday.dateBirthday);
+            std::cout << id.birthday.dateBirthday[2] << std::endl;
+            std::cout << id.birthday.dateBirthday[5] << std::endl;
             
-            while(id.birthday.dateBirthday[2] != '/')
+            while(id.birthday.dateBirthday[2] != '/' or id.birthday.dateBirthday[5] != '/')
                 {
                     std::cout << " Error try again BIRTHDAY : ";
                     std::getline(std::cin, id.birthday.dateBirthday);
                 }
             
-            while(id.birthday.dateBirthday[5] != '/')
-                {
-                    std::cout << " Error try again BIRTHDAY : ";
-                    std::getline(std::cin, id.birthday.dateBirthday);
-                }
+//            while(id.birthday.dateBirthday[5] != '/')
+//                {
+//                    std::cout << " Error try again BIRTHDAY : ";
+//                    std::getline(std::cin, id.birthday.dateBirthday);
+//                }
             identification.push_back(id.birthday.dateBirthday);
             
             std::cout << " Eye color : ";
