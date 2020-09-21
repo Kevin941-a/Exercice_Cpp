@@ -11,13 +11,12 @@
 #include <iostream>
 #include "functions.hpp"
 
-void type(std::string& valueToTake, std::vector<std::string>& table)
+void type(std::string& valueToTake)
 {
     std::getline(std::cin, valueToTake);
-    table.push_back(valueToTake);
 }
 
-void typeAndCheck(std::string& valueToTake, std::vector<std::string>& table, uint8_t max, uint8_t ignore)
+void typeAndCheck(std::string& valueToTake, uint8_t max, uint8_t ignore)
 {
     std::cin >> valueToTake;
     std::cin.ignore(ignore, '\n');
@@ -29,10 +28,9 @@ void typeAndCheck(std::string& valueToTake, std::vector<std::string>& table, uin
         std::cin.ignore(ignore, '\n');
     }
     
-    table.push_back(valueToTake);
 }
 
-void typeAndCheckDate(std::string& valueToTake, std::vector<std::string>& table)
+void typeAndCheckDate(std::string& valueToTake)
 {
     std::getline(std::cin, valueToTake);
     while(valueToTake[2] != '/' or valueToTake[5] != '/')
@@ -40,11 +38,11 @@ void typeAndCheckDate(std::string& valueToTake, std::vector<std::string>& table)
             std::cout << "Error try again : ";
             std::getline(std::cin, valueToTake);
         }
-    table.push_back(valueToTake);
+
 }
 
 
-void typeAndCheckSize(std::string& valueToTake, std::vector<std::string>& table, uint8_t ignore)
+void typeAndCheckSize(std::string& valueToTake, uint8_t ignore)
 {
     std::cin >> valueToTake;
     std::cin.ignore(ignore, '\n');
@@ -55,8 +53,7 @@ void typeAndCheckSize(std::string& valueToTake, std::vector<std::string>& table,
         std::cin >> valueToTake;
         std::cin.ignore(ignore, '\n');
     }
-    
-    table.push_back(valueToTake);
+
 }
 
 void display(int numberOfId, uint8_t numberOfInput, std::vector<std::string>& table)
