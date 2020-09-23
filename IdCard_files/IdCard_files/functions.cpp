@@ -56,29 +56,3 @@ void typeAndCheckSize(std::string& valueToTake, uint8_t ignore)
 
 }
 
-void display(int numberOfId, uint8_t numberOfInput, std::vector<std::string>& table)
-{
-    int idNumber{1};
-    const uint8_t changeTable{12};
-    for (int iteration = 0; iteration < numberOfId * numberOfInput; ++iteration)
-        {
-            std::cout << "Checking ID number " << idNumber << std::endl;
-            std::cout << "\tName : " << table[iteration] << std::endl;
-            std::cout << "\tFirstname : " << table[iteration+1] << std::endl;
-            std::cout << "\tAge : " << table[iteration+2] << " y/o" << std::endl;
-            std::cout << "\tReference number : " << table[iteration+3] << std::endl;
-            std::cout << "\tBirthday : " << table[iteration+4] << std::endl;
-            std::cout << "\tEye color : " << table[iteration+5] << std::endl;
-            std::cout << "\tHair color : " << table[iteration+6] << std::endl;
-            std::cout << "\tSize : " << table[iteration+7] << " m" << std::endl;
-            std::cout << "\tNumber of street : " << table[iteration+8] << std::endl;
-            std::cout << "\tName of street : " << table[iteration+9] << std::endl;
-            std::cout << "\tZIP code : " << table[iteration+10] << std::endl;
-            std::cout << "\tCity : " << table[iteration+11] << std::endl;
-            std::cout << "\tCountry : " << table[iteration+12] << std::endl;
-            std::cout << std::endl;
-            iteration = iteration + changeTable;
-            idNumber++;
-        }
-    
-}
