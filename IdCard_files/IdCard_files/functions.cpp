@@ -56,3 +56,4 @@ void typeAndCheckSize(std::string& valueToTake, uint8_t ignore)
 
 }
 
+
