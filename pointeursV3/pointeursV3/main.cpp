@@ -7,25 +7,27 @@
 
 #include <iostream>
 
-void fonction(int *pointeur)
+int * fonction(int *pointeur)
 {
     int *p;
     p = new int;
     
     p = pointeur;
-    std::cout << *p << std::endl;
+//    std::cout << *p << std::endl;
+    return p;
 }
 
 int main()
 {
     int value;
+    int * pointeur;
 
     
     std::cout << "Saisir une valeur : ";
     std::cin >> value;
     
-    fonction(&value);
-    
+    pointeur = fonction(&value);
+    std::cout << *pointeur << std::endl;
 
     return 0;
 }
