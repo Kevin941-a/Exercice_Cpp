@@ -6,41 +6,32 @@
 //
 
 #include <iostream>
-
-class Point
-{
-public:
-    Point(float abscisse, float ordonnee)
-    {
-        x = abscisse;
-        y = ordonnee;
-    }
-    
-    void deplace(float deplaceX, float deplaceY)
-    {
-        x += deplaceX;
-        y += deplaceY;
-    }
-    
-    float Abscisse()
-    {
-        return x;
-    }
-    
-    float Ordonne()
-    {
-        return y;
-    }
-    
-private:
-    float x, y;
-};
+#include "Point.hpp"
 
 int main()
 {
-    Point p(2.43, 7.98);
-    std::cout << "Les coordonnées du point sont : X = " << p.Abscisse() << " et Y = " << p.Ordonne() << std::endl;
-    p.deplace(5.7, 1);
-    std::cout << "Les coordonnées du point sont : X = " << p.Abscisse() << " et Y = " << p.Ordonne() << std::endl;
+    Point p(0.0, 0.0);
+    float mainAbscisse, mainOrdonnee, mainDeplaceX, mainDeplaceY;
+    
+    std::cout << "Saisir les coordonnées du point." << std::endl;
+    std::cout << "X = ";
+    std::cin >> mainAbscisse;
+    p.setAbscisse(mainAbscisse);
+    std::cout << "Y = ";
+    std::cin >> mainOrdonnee;
+    p.setOrdonnee(mainOrdonnee);
+    p.affiche();
+    std::cout << std::endl;
+    
+    std::cout << "Saisir le déplacement du point." << std::endl;
+    std::cout << "Deplacement de X = ";
+    std::cin >> mainDeplaceX;
+    std::cout << "Deplacement de Y = ";
+    std::cin >> mainDeplaceY;
+    p.deplace(mainDeplaceX, mainDeplaceY);
+    
+    std::cout << "Les nouvelles coordonnées du point sont : X = " << p.abscisse() << " et Y = " << p.ordonnee() << " ." << std::endl;
+    
+    std::cout << std::endl;
     return 0;
 }
