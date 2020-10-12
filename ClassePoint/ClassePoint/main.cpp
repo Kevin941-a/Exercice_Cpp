@@ -8,36 +8,31 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "Point.hpp"
 
-class Point
-{
-public:
-    Point(float abscisse, float ordonnee)
-    {
-        x = abscisse;
-        y = ordonnee;
-    }
-    
-    void deplace(float deplaceX, float deplaceY)
-    {
-        x += deplaceX;
-        y += deplaceY;
-    }
-    
-    void affiche()
-    {
-        std::cout << "Les coordonnées du point sont : x = " << x << " et y = " << y << std::endl;
-    }
-    
-private:
-    float x, y;
-};
 
 int main()
 {
-    Point p(2.43, 7.98);
+    Point p(0.0, 0.0);
+    float mainAbscisse, mainOrdonnee, mainDeplaceX, mainDeplaceY;
+    
+    std::cout << "Saisir les coordonnées du point." << std::endl;
+    std::cout << "X = ";
+    std::cin >> mainAbscisse;
+    p.setAbscisse(mainAbscisse);
+    std::cout << "Y = ";
+    std::cin >> mainOrdonnee;
+    p.setOrdonnee(mainOrdonnee);
     p.affiche();
-    p.deplace(5.7, 1);
+    std::cout << std::endl;
+    
+    std::cout << "Saisir le déplacement du point." << std::endl;
+    std::cout << "Deplacement de X = ";
+    std::cin >> mainDeplaceX;
+    std::cout << "Deplacement de Y = ";
+    std::cin >> mainDeplaceY;
+    p.deplace(mainDeplaceX, mainDeplaceY);
     p.affiche();
+    std::cout << std::endl;
     return 0;
 }
