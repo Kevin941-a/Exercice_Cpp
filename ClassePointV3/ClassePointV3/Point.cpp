@@ -22,7 +22,7 @@ void Point::deplace(float deplaceX, float deplaceY)
 
 void Point::affiche()
 {
-    std::cout << "Les coordonnées cartésiennes du point sont : X = " << x << " et Y = " << y << " ." << std::endl;
+    std::cout << "Les coordonnées du point sont : X = " << x << " et Y = " << y << " ." << std::endl;
 }
 
 void Point::setAbscisse(float newAbscisse)
@@ -53,4 +53,20 @@ float Point::rho()
 float Point::theta()
 {
     return atan(y/x);
+}
+
+void Point::rotation(float rotation)
+{
+    float r = sqrt(x*x + y*y);
+    float t = atan(y/x);
+    t += rotation;
+    
+    x = r * cos(t);
+    y = r * sin(t);
+}
+
+void Point::homothetie(float homothetie)
+{
+    x *= homothetie;
+    y *= homothetie;
 }

@@ -14,7 +14,7 @@
 int main()
 {
     Point p(0.0, 0.0);
-    float mainAbscisse, mainOrdonnee, mainDeplaceX, mainDeplaceY;
+    float mainAbscisse, mainOrdonnee, mainDeplaceX, mainDeplaceY, mainHomothetie, mainRotation;
     
     std::cout << "Saisir les coordonnées du point." << std::endl;
     
@@ -26,9 +26,7 @@ int main()
     std::cin >> mainOrdonnee;
     p.setOrdonnee(mainOrdonnee);
     std::cout << std::endl;
-    
     p.affiche();
-    std::cout << "Coordonnées polaires : r = " << p.rho() << " et angle = " << p.theta() << "." << std::endl;
     std::cout << std::endl;
     
     std::cout << "Saisir le déplacement du point." << std::endl;
@@ -44,6 +42,24 @@ int main()
     
     std::cout << "Les coordonnées du point sont : X = " << p.getAbscisse() << " et Y = " << p.getOrdonnee() << " ." << std::endl;
     std::cout << "Coordonnées polaires : r = " << p.rho() << " et angle = " << p.theta() << "." << std::endl;
+    
+    
+    std::cout << "Fonction Homothetie" << std::endl;
+    std::cout << "Valeur Homothetie : ";
+    std::cin >> mainHomothetie;
+    p.homothetie(mainHomothetie);
+    p.affiche();
+    std::cout << std::endl;
+    
+    std::cout << "Fonction Rotation" << std::endl;
+    std::cout << "Valeur de roation : ";
+    std::cin >> mainRotation;
+    p.rotation(mainRotation);
+    p.affiche();
+    std::cout << std::endl;
+    
+    std::cout << "Coordonnées polaires : r = " << p.rho() << " et angle = " << p.theta() << "." << std::endl;
+    std::cout << std::endl;
     
     return 0;
 }
